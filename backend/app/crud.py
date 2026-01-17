@@ -10,7 +10,7 @@ from .schemas import ApplicationCreate
 def create_application(session: Session, application: ApplicationCreate) -> Application:
 
     # Convert API input schema into DB model
-    db_application = Application.model_validate(application, form_attributes=True)
+    db_application = Application.model_validate(application, from_attributes=True)
 
     # Add new application to the session
     session.add(db_application)
