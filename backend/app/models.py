@@ -20,7 +20,7 @@ class Application(SQLModel, table=True):
     # Job role/title (required)
 
     date_applied: date 
-    # WWhen the application was submitted
+    # When the application was submitted
 
     status: str = Field(default="Applied")
     # Application state; default keeps logic simple early on

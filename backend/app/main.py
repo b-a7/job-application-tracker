@@ -5,7 +5,7 @@ from sqlmodel import Session
 
 from .database import engine, get_session
 from .schemas import ApplicationCreate, ApplicationRead
-from .crud import create_application, get_applications
+from .crud import create_application, get_applications, get_application_summary
 
 # Creating instance of FastAPI application as 'app'
 app = FastAPI()
@@ -38,4 +38,9 @@ def list_applications_endpoint(
     # Return all stored job applications
     return get_applications(session)
 
-
+@app.get("/analytics/summary")
+def application_summary(
+    session: Session = Depends(get_session),
+):
+    # Return high-level application statistics
+    return get_application_summary(session)

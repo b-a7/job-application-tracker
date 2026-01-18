@@ -35,3 +35,25 @@ def get_applications(session: Session) -> list[Application]:
     # .all converts to list
     return session.exec(statement).all()
 
+# Function to get summary statistics of applications by status
+def get_application_summary(session: Session) -> dict:
+
+    applications = get_applications(session)
+
+    # Initialise summary dictionary
+    summary = {
+        "total": len(applications),
+        "applied": 0,
+        "interview": 0,
+        "offer": 0,
+        "rejected": 0,
+        "no response": 0,
+    }
+
+    # Count applications by status
+    for app in applications:
+        status = app.status.lower()
+        if status in summary:
+            summary[status] += 1
+    
+    return summary 
