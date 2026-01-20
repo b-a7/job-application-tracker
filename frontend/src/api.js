@@ -3,6 +3,7 @@
 
 // Base URL of FastAPI backend
 const API_BASE_URL = "http://localhost:8000";
+//const API_BASE_URL = "http://192.168.1.228:5173/";
 
 let authToken = null;
 
