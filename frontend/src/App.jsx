@@ -98,13 +98,21 @@ return (
   <div className="min-h-screen bg-zinc-900 text-zinc-100">
     <div className="max-w-7xl mx-auto px-6 py-8 space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <h1 className="text-xl font-semibold">
-          Job Application Tracker
-        </h1>
+      <div className="relative flex items-center justify-center">
+        {/* Centered title + welcome */}
+        <div className="flex flex-col items-center gap-1">
+          <h1 className="text-2xl font-semibold text-white">
+            Job Application Tracker
+          </h1>
+          <p className="text-lg text-zinc-400">
+            Welcome, {user.username}
+          </p>
+        </div>
+
+        {/* Logout button (top-right) */}
         <button
           onClick={handleLogout}
-          className="text-sm text-zinc-400 hover:text-white"
+          className="absolute right-0 text-sm text-zinc-400 hover:text-white"
         >
           Logout
         </button>
