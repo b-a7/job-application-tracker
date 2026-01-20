@@ -27,3 +27,19 @@ class ApplicationRead(ApplicationBase):
 
     # Includes DB-generated ID so clients can reference records
     model_config = ConfigDict(from_attributes=True)
+
+class ApplicationUpdate(SQLModel):
+    status: Optional[str] = None
+
+class LoginRequest(SQLModel):
+    username: str
+    password: str
+
+class LoginResponse(SQLModel):
+    id: int
+    username: str
+    token: str
+
+class UserCreate(SQLModel):
+    username: str
+    password: str
