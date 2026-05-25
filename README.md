@@ -41,4 +41,4 @@ Project Inspiration: While searching for jobs I could not find an easy to use ap
 
 ## Future improvements and Next Steps
 - Add filtering and sorting to applications table
-- Deployment configuration (Docker / cloud hosting)
+- Deployment 
